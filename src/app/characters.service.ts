@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CharactersService {
 
-  private apiUrl = 'https://rickandmortyapi.com/api/character/1,2,3,4,5'; // Reemplaza con la URL real de tu API
+  private apiUrl = 'https://apirickmorty-production.up.railway.app/characters';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +16,14 @@ export class CharactersService {
   }
 
   getCharacter(id:string): Observable<any[]> {
-    return this.http.get<any[]>('https://rickandmortyapi.com/api/character/'+id);
+    return this.http.get<any[]>(this.apiUrl+'/'+id);
+  }
+
+  create(data: any): Observable<any>{
+    return this.http.post(this.apiUrl, data)
+  }
+
+  delete(id: any): Observable<any>{
+    return this.http.delete(this.apiUrl+'/'+id)
   }
 }

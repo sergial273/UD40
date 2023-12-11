@@ -3,6 +3,7 @@ import { AboutComponenetComponent } from './about-componenet/about-componenet.co
 import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
 import { SeeOneComponent } from './see-one/see-one.component';
+import { AddOneComponent } from './add-one/add-one.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path:'more/:id',
         component:SeeOneComponent
+    },
+    {
+        path:'add',
+        component:AddOneComponent
     }
 ];

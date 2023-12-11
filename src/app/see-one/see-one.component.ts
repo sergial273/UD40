@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../characters.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-see-one',
@@ -13,7 +13,7 @@ export class SeeOneComponent implements OnInit {
   characters: any;
   id: string = '1';
 
-  constructor(private CharactersService: CharactersService, private route: ActivatedRoute) { }
+  constructor(private CharactersService: CharactersService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
@@ -22,6 +22,13 @@ export class SeeOneComponent implements OnInit {
     });
     this.CharactersService.getCharacter(this.id).subscribe(data => {
       this.characters = data;
+    });
+  }
+
+  delete(){
+    this.CharactersService.delete(this.id).subscribe(data => {
+      alert("Done");
+      this.router.navigate(['/characters']);
     });
   }
 

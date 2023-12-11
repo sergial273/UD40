@@ -1,0 +1,84 @@
+<div class="container">
+  <form>
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter name"
+        name="name"
+        required [(ngModel)]="character.name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Status</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Status"
+        name="status"
+        required [(ngModel)]="character.status"
+      />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Species</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Species"
+          name="species"
+          required [(ngModel)]="character.species"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Gender</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Gender"
+          name="gender"
+          required [(ngModel)]="character.gender"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Origin</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Origin"
+          name="origin"
+          required [(ngModel)]="character.origin"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Image</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Image"
+          name="image"
+          required [(ngModel)]="character.image"
+        />
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="saveCharacter()">Submit</button>
+    } @else{
+    <div>
+      <h4>Character submitted successfully!</h4>
+      <button type="submit" class="btn btn-primary" (click)="newCharacter()">Add</button>
+    </div>
+    }
+  </form>
+</div>

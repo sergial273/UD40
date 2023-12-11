@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CharactersService } from '../characters.service';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
@@ -17,6 +16,7 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit() {
     this.CharactersService.getCharacters().subscribe(data => {
+      console.log(data)
       this.characters = data;
     });
   }
